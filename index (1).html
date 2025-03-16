@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="logo">My Website</a>
+        <div class="hamburger">&#9776;</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p>This is a responsive website with a toggle menu for mobile users.</p>
+        <button>Click Me</button>
+    </div>
+
+    <script>
+        // Toggle Hamburger Menu for Mobile
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.querySelector(".hamburger");
+            const menu = document.querySelector(".menu");
+
+            hamburger.addEventListener("click", function () {
+                menu.style.display = menu.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: white;
+            padding: 15px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .navbar .menu {
+            display: flex;
+        }
+
+        .navbar .menu a {
+            margin: 0 10px;
+        }
+
+        /* Hamburger Menu (Hidden by Default) */
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Responsive Image */
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Buttons */
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .menu {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+            }
+
+            .navbar .menu a {
+                display: block;
+                padding: 10px;
+                background: #444;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 0.9rem;
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+</body>
+</html>
